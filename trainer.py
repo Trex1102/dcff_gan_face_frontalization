@@ -198,5 +198,9 @@ class Trainer:
                     plt.savefig(os.path.join(save_dir, 'Test-{}-{}.png'.format(epoch, test_num)))
                     plt.close()
                     img_list.append(figs)
+            save_dir = 'logs/saved_model' + str(test_num)
+            os.makedirs(save_dir, exist_ok=True)
+
+            torch.save(netG.state_dict(), os.path.join(save_dir, 'netG-{}-{}.pth'.format(epoch, test_num)))
 
 
