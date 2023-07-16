@@ -192,15 +192,15 @@ class Trainer:
                     plt.imshow(np.transpose(vutils.make_grid(fix_y, nrow=1, padding=5,
                     normalize=True).cpu(), (1,2,0)))
 
-                    save_dir = 'logs/test' + str(test_num)
+                    save_dir = 'logs/images'
                     os.makedirs(save_dir, exist_ok=True)
 
-                    plt.savefig(os.path.join(save_dir, 'Test-{}-{}.png'.format(epoch, test_num)))
+                    plt.savefig(os.path.join(save_dir, 'Test-{}-{}.png'.format(epoch)))
                     plt.close()
                     img_list.append(figs)
-            save_dir = 'logs/saved_model' + str(test_num)
+            
+            save_dir = 'model/'
             os.makedirs(save_dir, exist_ok=True)
-
-            torch.save(netG.state_dict(), os.path.join(save_dir, 'netG-{}-{}.pth'.format(epoch, test_num)))
+            torch.save(netG.state_dict(), os.path.join(save_dir, 'netG-{}-{}.pth'.format(epoch)))
 
 

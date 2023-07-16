@@ -29,6 +29,9 @@ dataroot = 'cfp-dataset/'
 profile_path = dataroot + 'profiles/'
 frontal_path = dataroot + 'frontals/'
 
+#Directory for model
+model_path = 'model/'
+
 # Batch size during training
 batch_size = 64
 
